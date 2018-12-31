@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Friz Quadrata TT';
+    src: url('./assets/fonts/friz-quadrata-tt.woff') format('woff');
+}
+
+html, body, #root, .damage-meter {
+    font-family: 'Friz Quadrata TT', Fallback, sans-serif;
+    height: 100%;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: normal;
+    color: #fff;
+    margin: 10px;
+}
+
+.damage-meter {
+    display: flex;
+    flex-direction: column;
+}
+
+.graph-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid black;
+    max-height: 40px;
+    min-height: 20px;
+    padding-left: 5px;
+    padding-right: 10px;
+
+    color: #fff !important;
+    font-size: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+
+    /* text outline hack with repeated shadows */
+    --h-shadow: 0.3px;
+    --v-shadow: 0.3px;
+    --blur-radius: 0.5px;
+    text-shadow:
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000,
+        var(--h-shadow) var(--v-shadow) var(--blur-radius) #000;
+    -webkit-font-smoothing: antialiased;
+
+    transition: all 0.5s ease-out;
+}
+
+.bar.deathknight { background-color: #C41F3B; }
+.bar.demonhunter { background-color: #A330C9; }
+.bar.druid { background-color: #FF7D0A; }
+.bar.hunter { background-color: #ABD473; }
+.bar.mage { background-color: #40C7EB; }
+.bar.monk { background-color: #00FF96; }
+.bar.paladin { background-color: #F58CBA; }
+.bar.priest { background-color: #FFFFFF; }
+.bar.rogue { background-color: #FFF569; }
+.bar.shaman { background-color: #0070DE; }
+.bar.warlock { background-color: #8787ED; }
+.bar.warrior { background-color: #C79C6E; }
